@@ -1,14 +1,16 @@
 import streamlit as st
-from execbox_side import execbox_side
+from execbox import execbox
 
-st.beta_set_page_config(layout="wide")
-
-execbox_side("""
+st.header("Edit my source 👇")
+execbox(
+    """
 import streamlit as st
 
-with st.sidebar:
-    st.write("Hello world!")
-
-st.button("Press me!")
-
-""", autorun=True, line_numbers=True)
+st.header("Results")
+if st.button("Press me!"):
+    st.balloons()
+""",
+    autorun=True,
+    line_numbers=True,
+    height=300,
+)
